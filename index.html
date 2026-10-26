@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Math Mystery Color Challenge</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="hero">
+  <p class="eyebrow">SOLVE · UNLOCK · COLOR</p>
+  <h1>Math Mystery Color Challenge</h1>
+  <p>Choose your grade, solve a problem, unlock its color, then click inside the matching region on the original worksheet picture.</p>
+</header>
+<main class="wrap">
+  <section class="setup card">
+    <label>Student name <input id="studentName" maxlength="60" placeholder="Enter your name"></label>
+    <label>Grade
+      <select id="gradeSelect">
+        <option value="7">Grade 7</option><option value="8">Grade 8</option><option value="9">Grade 9</option>
+      </select>
+    </label>
+    <button id="startBtn" class="primary">Start / change grade</button>
+  </section>
+  <section class="stats">
+    <div class="card"><strong id="solvedCount">0 / 0</strong><span>Questions solved</span></div>
+    <div class="card"><strong id="progressPct">0%</strong><span>Question progress</span></div>
+    <div class="card"><strong id="accuracy">—</strong><span>Accuracy</span></div>
+  </section>
+  <div class="layout">
+    <section class="card canvas-card">
+      <div class="section-head"><div><p class="eyebrow dark">YOUR CANVAS</p><h2 id="pictureTitle">Grade 7 picture</h2></div><button id="resetColors" class="secondary">Reset picture</button></div>
+      <div class="picture-wrap">
+        <canvas id="pictureCanvas" aria-label="Original math worksheet picture. Click a region to fill it with an unlocked color."></canvas>
+        <p id="pictureHint" class="picture-hint">Loading original picture…</p>
+      </div>
+      <p class="help">How to color: solve a question correctly, select one of your unlocked colors, then click inside a white area of the picture. Click away from black outlines and text. Use <b>Reset picture</b> to start coloring again.</p>
+      <h3>Unlocked colors</h3>
+      <div id="palette" class="palette"></div>
+      <p id="feedback" class="feedback" aria-live="polite">Solve a question to unlock a color.</p>
+    </section>
+    <section class="card questions-card">
+      <div class="section-head"><div><p class="eyebrow dark">MATH CHALLENGE</p><h2>Questions</h2></div><span id="questionCount" class="badge"></span></div>
+      <p class="small">Type the answer and press Check. For equations, enter the value of x. For multiple solutions, enter both values separated by “or” or a comma.</p>
+      <div id="questionList" class="question-list"></div>
+    </section>
+  </div>
+  <section class="notice">
+    <b>Teacher note:</b> The worksheet color keys do not include a color for every answer printed in the questions. Answers with no matching printed-key value receive an extra color, marked “extra,” so all questions can still unlock a color.
+  </section>
+</main>
+<footer>Math Mystery Color Challenge · Grades 7–9</footer>
+<script src="app.js"></script>
+</body></html>
